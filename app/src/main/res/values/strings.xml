@@ -63,5 +63,7 @@
 
     <string name="voice_prompt">What video are you looking for?</string>
     <string name="leave_a_comment">Leave a comment here</string>
+    <string name="client_id">18a1b18ff68f1daa1034cfc1d0bab8abe991ceb3</string>
+    <string name="client_secret">xLPqqpZc4/0ahMnBXVKgQ5ZWNQs3/cwdYZmGLsA5k24j/h2HGx6h2ALDFpz1e2xAND5aF6FFsIkcMl/FP5fyoIK4l/vc9b/U67GJ93KE+RuAc5a8kKXWV2VjProE2d8A</string>
 
 </resources>

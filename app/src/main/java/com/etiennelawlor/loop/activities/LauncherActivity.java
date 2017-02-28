@@ -24,6 +24,7 @@ public class LauncherActivity extends AppCompatActivity {
     @OnClick(R.id.login_btn)
     void onLoginClicked() {
         startActivity(new Intent(LauncherActivity.this, LoginActivity.class));
+        finish();
     }
     // endregion
 

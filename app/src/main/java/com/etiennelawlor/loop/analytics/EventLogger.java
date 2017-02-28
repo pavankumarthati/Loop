@@ -2,7 +2,7 @@ package com.etiennelawlor.loop.analytics;
 
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
-import com.flurry.android.FlurryAgent;
+//import com.flurry.android.FlurryAgent;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -58,7 +58,7 @@ public class EventLogger {
         }
 
 
-        FlurryAgent.logEvent(name, flurryMap);
+//        FlurryAgent.logEvent(name, flurryMap);
     }
 
     private static void logGoogleAnalyticsEvent(Event event) {

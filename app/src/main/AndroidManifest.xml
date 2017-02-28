@@ -17,8 +17,10 @@
         android:name=".LoopApplication">
 
         <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="${fabricApiKey}" />
+                android:name="io.fabric.ApiKey"
+                android:value="${fabricApiKey}"
+                />
+
 
         <!-- Activities -->
         <activity

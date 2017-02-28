@@ -1,7 +1,9 @@
 package com.etiennelawlor.loop.activities;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -11,9 +13,9 @@ import android.webkit.WebViewClient;
 
 import com.etiennelawlor.loop.R;
 import com.etiennelawlor.loop.helper.PreferencesHelper;
+import com.etiennelawlor.loop.models.AccessToken;
 import com.etiennelawlor.loop.network.ServiceGenerator;
 import com.etiennelawlor.loop.network.VimeoService;
-import com.etiennelawlor.loop.models.AccessToken;
 import com.etiennelawlor.loop.network.models.response.AuthorizedUser;
 import com.etiennelawlor.loop.network.models.response.OAuthResponse;
 import com.etiennelawlor.loop.utilities.LogUtility;
@@ -36,20 +38,19 @@ public class LoginActivity extends AppCompatActivity {
     WebView mWebView;
 
     private WebViewClient mWebViewClient = new WebViewClient() {
+
+        @SuppressWarnings( "deprecation" )
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             Timber.i("Processing webview url click..."); // http://localhost/?code=0e4c71d1ed6f61c70b708a6098f37337033082ff
             if (!TextUtils.isEmpty(url) && !url.startsWith(getString(R.string.client_redirect_uri))) {
                 view.loadUrl(url); // Uri.parse(url).getQueryParameter("code")
             }
-
             return true;
         }
 
         @Override
         public void onPageFinished(WebView view, String url) {
             Timber.i("Finished loading URL: " + url);
-//                setSupportProgressBarIndeterminateVisibility(false);
-//                mSmoothProgressBar.setVisibility(View.GONE);
 
             if (!TextUtils.isEmpty(url) && url.startsWith(getString(R.string.client_redirect_uri))) {
                 Uri uri = Uri.parse(url);
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
+        @SuppressWarnings("deprecation")
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
             Timber.e("Error: " + errorCode + ":" + description + ":" + failingUrl);
 

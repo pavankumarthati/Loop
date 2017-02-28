@@ -136,7 +136,8 @@ public class ServiceGenerator {
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         } else {
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
-        }        okHttpClient.interceptors().add(httpLoggingInterceptor); // Add only for debugging purposes
+        }
+        okHttpClient.interceptors().add(httpLoggingInterceptor); // Add only for debugging purposes
 
         sRetrofitBuilder.client(okHttpClient);
         sRetrofitBuilder.baseUrl(baseUrl);

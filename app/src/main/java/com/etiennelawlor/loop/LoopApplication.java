@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
-import com.flurry.android.FlurryAgent;
+//import com.flurry.android.FlurryAgent;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -87,9 +87,9 @@ public class LoopApplication extends Application {
     }
 
     private void initializeFlurry(){
-        FlurryAgent.setLogEnabled(false);
+//        FlurryAgent.setLogEnabled(false);
 
-        FlurryAgent.init(this, getString(R.string.flurry_api_key));
+//        FlurryAgent.init(this, getString(R.string.flurry_api_key));
     }
     // endregion
 
